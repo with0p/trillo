@@ -12,6 +12,12 @@
   align-items: center;
   justify-content: center;
 
+  @media only screen and (max-width: $bp-smallest) {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: var(--color-grey-light-2);
+  }
+
   &__input {
     font-family: inherit;
     font-size: inherit;
@@ -63,7 +69,6 @@
 //////user navigation
 .user-nav {
   align-self: stretch;
-
   display: flex;
   align-items: center;
 
@@ -120,11 +125,20 @@
   list-style: none;
   margin-top: 3.5rem;
 
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+
   &__item {
     position: relative;
 
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+      @media only screen and (max-width: $bp-medium) {
+        margin-bottom: 0;
+      }
     }
 
     &::before {
@@ -148,6 +162,10 @@
     &:active::before {
       background-color: var(--color-primary-light);
     }
+
+    @media only screen and (max-width: $bp-medium) {
+      flex: 0 0 24%;
+    }
   }
 
   &__link:link,
@@ -161,6 +179,15 @@
 
     display: flex;
     align-items: center;
+
+    @media only screen and (max-width: $bp-medium) {
+      justify-content: center;
+      padding: 2rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+      padding: 1.5rem;
+    }
   }
 
   &__icon {
@@ -168,6 +195,12 @@
     width: 1.75rem;
     margin-right: 2rem;
     fill: currentColor;
+    @media only screen and (max-width: $bp-small) {
+      margin-right: 2rem;
+      margin-bottom: 1rem;
+      height: 1.5rem;
+      width: 1.5rem;
+    }
   }
 }
 
@@ -176,6 +209,10 @@
   color: var(--color-grey-light-4);
   text-align: center;
   padding: 2.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    display: none;
+  }
 }
 
 //////hotels photos
@@ -200,6 +237,11 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+      padding: 1rem 1.5rem;
+    }
   }
 
   &__stars {
@@ -233,16 +275,25 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media only screen and (max-width: $bp-small) {
+      padding: 0 1rem;
+    }
   }
 
   &__rating-average {
     font-size: 2rem;
     font-weight: 300;
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.5rem;
+    }
   }
 
   &__rating-count {
     font-size: 0.8rem;
     text-transform: uppercase;
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.1rem;
+    }
   }
 }
 
@@ -337,6 +388,7 @@
   }
 
   &__friends {
+    display: flex;
   }
 
   &__photo {
@@ -347,7 +399,7 @@
     border: 3px solid #fff;
 
     &:not(:last-child) {
-      margin-right: -1.5rem;
+      margin-right: -2rem;
     }
   }
 }
@@ -359,6 +411,11 @@
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
 
   &__text {
     margin-bottom: 2rem;
